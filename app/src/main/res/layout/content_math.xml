@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:background="@color/windowBackground"
+    tools:context=".Math"
+    tools:showIn="@layout/activity_math">
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/playerLP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#424242"
+            android:text="8000"
+            android:textSize="35sp" />
+
+        <TextView
+            android:id="@+id/operation"
+            android:textColor="#424242"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" - "
+            android:textSize="35sp" />
+
+        <TextView
+            android:id="@+id/num2"
+            android:textColor="#424242"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  "
+            android:textSize="35sp" />
+    </LinearLayout>
+
+    !--Mathematical Operations
+
+    <LinearLayout
+        android:id="@+id/mathButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header">
+
+
+    </LinearLayout>
+
+    !--Number Buttons
+
+
+    <Button
+        android:id="@+id/math_7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mathButtons"
+        android:onClick="createNum"
+        android:text="7" />!--7
+
+    <Button
+        android:id="@+id/math_8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mathButtons"
+        android:layout_toRightOf="@id/math_7"
+        android:onClick="createNum"
+        android:text="8" />!--8
+
+    <Button
+        android:id="@+id/math_9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mathButtons"
+        android:layout_toEndOf="@id/math_8"
+        android:onClick="createNum"
+        android:text="9" />!--9
+
+    <Button
+        android:id="@+id/math_plus"
+        android:layout_width="wrap_content"
+        android:layout_height="125dp"
+        android:onClick="addOperation"
+        android:text="+"
+        android:layout_below="@id/mathButtons"
+        android:layout_toEndOf="@id/math_9" />
+
+
+    <Button
+        android:id="@+id/math_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/math_9"
+        android:onClick="createNum"
+        android:text="4" />!--4
+
+    <Button
+        android:id="@+id/math_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/math_9"
+        android:layout_toRightOf="@id/math_4"
+        android:onClick="createNum"
+        android:text="5" />!--5
+
+    <Button
+        android:id="@+id/math_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/math_9"
+        android:layout_toRightOf="@id/math_5"
+        android:onClick="createNum"
+        android:text="6" />!--6
+
+
+    <Button
+        android:id="@+id/math_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/math_6"
+        android:onClick="createNum"
+        android:text="1" />!--1
+
+    <Button
+        android:id="@+id/math_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/math_6"
+        android:layout_toRightOf="@id/math_1"
+        android:onClick="createNum"
+        android:text="2" />!--2
+
+    <Button
+        android:id="@+id/math_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/math_6"
+        android:layout_toRightOf="@id/math_2"
+        android:onClick="createNum"
+        android:text="3" />!--3
+
+
+    <Button
+        android:id="@+id/math_0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/math_1"
+        android:layout_toLeftOf="@id/math_5"
+        android:onClick="createNum"
+        android:text="0" />
+
+    <Button
+        android:id="@+id/math_equals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/math_2"
+        android:layout_toRightOf="@id/math_0"
+        android:onClick="solve"
+        android:text="=" />
+    <Button
+        android:id="@+id/ac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="clearNum"
+        android:text="AC"
+        android:layout_below="@id/math_3"
+        android:layout_toRightOf="@id/math_equals"/>
+
+    <Button
+        android:id="@+id/math_minus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="subtractOperation"
+        android:text="-"
+        android:layout_toEndOf="@id/ac"
+        android:layout_below="@+id/math_plus"
+        android:layout_alignBottom="@id/ac" />
+
+
+</RelativeLayout>
